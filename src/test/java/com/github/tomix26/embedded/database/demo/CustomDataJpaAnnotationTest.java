@@ -8,6 +8,8 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Optional;
+
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
@@ -19,11 +21,12 @@ public class CustomDataJpaAnnotationTest {
 
     @Test
     public void testEmbeddedDatabase() {
-        Person person = personRepository.findOne(1L);
+        Optional<Person> personOptional = personRepository.findById(1L);
 
-        assertThat(person).isNotNull();
-        assertThat(person.getId()).isNotNull();
-        assertThat(person.getFirstName()).isEqualTo("Dave");
-        assertThat(person.getLastName()).isEqualTo("Syer");
+        assertThat(personOptional).hasValueSatisfying(person -> {
+            assertThat(person.getId()).isNotNull();
+            assertThat(person.getFirstName()).isEqualTo("Dave");
+            assertThat(person.getLastName()).isEqualTo("Syer");
+        });
     }
 }
