@@ -1,7 +1,6 @@
 package com.github.tomix26.embedded.database.demo.annotation;
 
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
-import org.flywaydb.test.annotation.FlywayTest;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
@@ -21,7 +20,6 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @AutoConfigureEmbeddedDatabase
-@FlywayTest
 @DataJpaTest
 public @interface PostgresDataJpaTest {
 
