@@ -1,5 +1,5 @@
 # Introduction
-It is a Spring Boot application demonstrating the use of [embedded-database-spring-test](https://github.com/zonkyio/embedded-database-spring-test) library.
+It is a Spring Boot application demonstrating the use of the [embedded-database-spring-test](https://github.com/zonkyio/embedded-database-spring-test) library.
 
 ## Maven Configuration
 Add the following maven dependency:
@@ -7,7 +7,7 @@ Add the following maven dependency:
 <dependency>
     <groupId>io.zonky.test</groupId>
     <artifactId>embedded-database-spring-test</artifactId>
-    <version>1.3.3</version>
+    <version>1.3.4</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -31,9 +31,8 @@ spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
 An example of test class demonstrating the use of the embedded database.
 ```java
 @RunWith(SpringRunner.class)
-@AutoConfigureTestDatabase(replace = NONE)
-@AutoConfigureEmbeddedDatabase
 @DataJpaTest
+@AutoConfigureEmbeddedDatabase
 public class SpringDataJpaAnnotationTest {
 
     @Autowired

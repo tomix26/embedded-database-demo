@@ -1,8 +1,6 @@
 package com.github.tomix26.embedded.database.demo.annotation;
 
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
-import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase.Replace;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.core.annotation.AliasFor;
@@ -18,9 +16,8 @@ import java.lang.annotation.Target;
 @Inherited
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
-@AutoConfigureTestDatabase(replace = Replace.NONE)
-@AutoConfigureEmbeddedDatabase
 @DataJpaTest
+@AutoConfigureEmbeddedDatabase
 public @interface PostgresDataJpaTest {
 
     @AliasFor(annotation = DataJpaTest.class)
