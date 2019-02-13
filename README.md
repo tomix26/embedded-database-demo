@@ -7,7 +7,7 @@ Add the following maven dependency:
 <dependency>
     <groupId>io.zonky.test</groupId>
     <artifactId>embedded-database-spring-test</artifactId>
-    <version>1.3.4</version>
+    <version>1.4.0</version>
     <scope>test</scope>
 </dependency>
 ```
