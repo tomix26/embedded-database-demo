@@ -1,3 +1,5 @@
+create extension if not exists ltree with schema test;
+
 create table test.person (
   id         bigint primary key not null,
   first_name varchar(255)       not null,
