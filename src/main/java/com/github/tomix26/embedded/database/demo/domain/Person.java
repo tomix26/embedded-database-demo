@@ -1,5 +1,7 @@
 package com.github.tomix26.embedded.database.demo.domain;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -17,6 +19,10 @@ public class Person {
 
     @Column(name = "last_name", nullable = false)
     private String lastName;
+
+    @Column(name = "okm_path", columnDefinition = "ltree")
+    @Type(type = "com.github.tomix26.embedded.database.demo.hibernate.type.LTreeType")
+    private String path;
 
     public Long getId() {
         return id;
@@ -40,5 +46,13 @@ public class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 }

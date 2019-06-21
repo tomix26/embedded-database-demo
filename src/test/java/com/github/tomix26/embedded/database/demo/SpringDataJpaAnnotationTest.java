@@ -29,6 +29,7 @@ public class SpringDataJpaAnnotationTest {
 			assertThat(person.getId()).isNotNull();
 			assertThat(person.getFirstName()).isEqualTo("Dave");
 			assertThat(person.getLastName()).isEqualTo("Syer");
+			assertThat(person.getPath()).isEqualTo("ROOT.first.parent");
 		});
 	}
 }
