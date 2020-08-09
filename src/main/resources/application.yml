@@ -1,0 +1,15 @@
+spring:
+  flyway:
+    schemas: test
+  datasource:
+    url: jdbc:postgresql://127.0.0.1:5432/app
+    username: postgres
+    password:
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL95Dialect
+        jdbc:
+          lob:
+            non_contextual_creation: true
