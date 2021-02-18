@@ -37,8 +37,19 @@
 		<dependency>
 			<groupId>io.zonky.test</groupId>
 			<artifactId>embedded-database-spring-test</artifactId>
-			<version>1.4.1</version>
+			<version>1.6.2</version>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>io.zonky.test.postgres</groupId>
+					<artifactId>*</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.testcontainers</groupId>
+			<artifactId>postgresql</artifactId>
+			<version>1.15.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.flywaydb.flyway-test-extensions</groupId>
