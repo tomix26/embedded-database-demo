@@ -7,7 +7,7 @@ Add the following maven dependency:
 <dependency>
     <groupId>io.zonky.test</groupId>
     <artifactId>embedded-database-spring-test</artifactId>
-    <version>1.4.0</version>
+    <version>2.0.1</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -18,14 +18,7 @@ Add the following property to your application configuration:
 # flyway.schemas=xxx // for spring boot 1.x.x
 spring.flyway.schemas=xxx // for spring boot 2.x.x
 ```
-Further, make sure that you do not use `org.flywaydb.test.junit.FlywayTestExecutionListener`. Because the library has its own test execution listener that can optimize database initialization. But this optimization has no effect if the `FlywayTestExecutionListener` is applied.
-## Spring Boot 2 Configuration
-Since Spring Boot 2, there is a compatibility issue with Hibernate and Postgres Driver. Add the following property to your application configuration to fix that:
-```properties
-# Workaround for a compatibility issue of Spring Boot 2 with Hibernate and Postgres Driver
-# See https://github.com/spring-projects/spring-boot/issues/12007
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
-```
+Further, make sure that you do not use `org.flywaydb.test.junit.FlywayTestExecutionListener`. Because the library has its own test execution listener that can optimize database initialization and this optimization has no effect if the `FlywayTestExecutionListener` is applied.
 
 # Example
 An example of test class demonstrating the use of the embedded database.
