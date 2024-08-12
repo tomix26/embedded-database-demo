@@ -1,0 +1,17 @@
+name: Checks
+on: [push, pull_request]
+jobs:
+  build:
+    name: Integration Tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout project
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'zulu'
+          java-version: 22
+          cache: 'maven'
+      - name: Build with Maven
+        run: mvn -B test
