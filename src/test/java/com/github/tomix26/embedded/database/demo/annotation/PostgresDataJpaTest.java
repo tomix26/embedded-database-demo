@@ -1,7 +1,7 @@
 package com.github.tomix26.embedded.database.demo.annotation;
 
 import io.zonky.test.db.AutoConfigureEmbeddedDatabase;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.data.jpa.test.autoconfigure.DataJpaTest;
 import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.core.annotation.AliasFor;
 
