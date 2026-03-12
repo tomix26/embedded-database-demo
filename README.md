@@ -7,7 +7,7 @@ Add the following maven dependency:
 <dependency>
     <groupId>io.zonky.test</groupId>
     <artifactId>embedded-database-spring-test</artifactId>
-    <version>2.0.1</version>
+    <version>2.8.0</version>
     <scope>test</scope>
 </dependency>
 ```
@@ -16,7 +16,7 @@ Add the following property to your application configuration:
 ```properties
 # Sets the schemas managed by Flyway -> change the xxx value to the name of your schema
 # flyway.schemas=xxx // for spring boot 1.x.x
-spring.flyway.schemas=xxx // for spring boot 2.x.x
+spring.flyway.schemas=xxx // for spring boot 2.x.x and higher
 ```
 Further, make sure that you do not use `org.flywaydb.test.junit.FlywayTestExecutionListener`. Because the library has its own test execution listener that can optimize database initialization and this optimization has no effect if the `FlywayTestExecutionListener` is applied.
 
